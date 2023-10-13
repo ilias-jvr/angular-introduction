@@ -1,5 +1,12 @@
 # Εισαγωγή στο Angular Framework
 
+## 13/10/2023 - 3. Alternate component input
+
+- input | undefined
+- *ngIf για εμφάνιση υπό συνθήκη στο template
+- ng-container 
+
+
 ## 12/10/2023
 
 - Δημιουργία Νέου Component 
