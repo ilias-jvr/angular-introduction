@@ -5,11 +5,12 @@ import { Person } from './interfaces/person';
 import { PersonComponent } from './person/person.component';
 import { PersonAltComponent } from './person-alt/person-alt.component';
 import { EventBindComponent } from './event-bind/event-bind.component';
+import { OutputDemoComponent } from './output-demo/output-demo.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, PersonComponent, PersonAltComponent, EventBindComponent],
+  imports: [CommonModule, PersonComponent, PersonAltComponent, EventBindComponent, OutputDemoComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
