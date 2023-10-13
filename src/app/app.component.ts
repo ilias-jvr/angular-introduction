@@ -4,23 +4,24 @@ import { Person } from './interfaces/person';
 
 import { PersonComponent } from './person/person.component';
 import { PersonAltComponent } from './person-alt/person-alt.component';
+import { EventBindComponent } from './event-bind/event-bind.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, PersonComponent, PersonAltComponent],
+  imports: [CommonModule, PersonComponent, PersonAltComponent, EventBindComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  name: string = 'Christodoulos';
-  lastName = 'Fragkoudakis';
+  name: string = 'Ilias';
+  lastName = 'Jvr';
 
   person: Person = {
-    givenName: 'Christodoulos',
-    surName: 'Fragkoudakis',
-    age: 0x37,
-    email: 'chfrag@aueb.gr',
+    givenName: 'Ilias',
+    surName: 'Jvr',
+    age: 0x24,
+    email: 'tzavilias@gmail.com',
     address: 'Athens, Greece',
   };
 

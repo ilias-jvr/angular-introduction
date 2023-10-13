@@ -1,6 +1,14 @@
 # Εισαγωγή στo Angular Framework
 
+## 5. Event Binding(template -> controller)
+
+- click handlers
+- Input handler
+- 2-way binding (two ways)
+
 ## 4. \*ngFor Directive
+
+-
 
 ## 3. Alternate component input
 
