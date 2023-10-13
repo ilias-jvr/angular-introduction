@@ -7,9 +7,8 @@ import { Person } from '../interfaces/person';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './person-alt.component.html',
-  styleUrls: ['./person-alt.component.css']
+  styleUrls: ['./person-alt.component.css'],
 })
 export class PersonAltComponent {
   @Input() person: Person | undefined;
-
 }

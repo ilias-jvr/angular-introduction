@@ -1,33 +1,34 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Person } from './interfaces/person';
+
 import { PersonComponent } from './person/person.component';
 import { PersonAltComponent } from './person-alt/person-alt.component';
-import { Person } from './interfaces/person';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, PersonComponent, PersonAltComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  name: string = "Ilias";
-  lastname: string = "Jvr";
+  name: string = 'Christodoulos';
+  lastName = 'Fragkoudakis';
 
   person: Person = {
-    givenName: 'Ilias',
-    surName: 'Jvr',
-    age: 0x24,
-    email: 'tzavilias@gmail.com',
+    givenName: 'Christodoulos',
+    surName: 'Fragkoudakis',
+    age: 0x37,
+    email: 'chfrag@aueb.gr',
     address: 'Athens, Greece',
   };
 
   person2: Person = {
-    givenName: 'George',
+    givenName: 'Giorgos',
     surName: 'Chatzidimitrakopoulos',
-    age: 0x37,
-    email: 'G.chatz@gmail.com',
+    age: 22,
+    email: 'chatzi@aueb.gr',
     address: 'Athens, Greece',
   };
 }
