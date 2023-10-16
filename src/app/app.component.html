@@ -15,6 +15,7 @@
 
 <app-person-alt *ngFor="let user of users" [person]="user"></app-person-alt> -->
 
-<app-event-bind></app-event-bind>
+<!-- <app-event-bind></app-event-bind> -->
 
-<!-- <app-output-demo *ngFor="let user of users" [person]="user"></app-output-demo> -->
+<app-output-demo [userData]="users" (deleteUser)="onDeleteUser($event)" ></app-output-demo>
+<app-person-card [person]="sentUser"></app-person-card>

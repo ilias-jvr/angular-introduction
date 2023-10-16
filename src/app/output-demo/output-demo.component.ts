@@ -21,5 +21,4 @@ export class OutputDemoComponent {
   onDeleteUser(i: number) {
     this.deleteUser.emit(i);
   }
-
 }
