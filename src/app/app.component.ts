@@ -10,6 +10,7 @@ import { PersonCardComponent } from './person-card/person-card.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { AppService } from './app.service';
+import { CrudDemoComponent } from './crud-demo/crud-demo/crud-demo.component';
 
 @Component({
   selector: 'app-root',
@@ -22,20 +23,21 @@ import { AppService } from './app.service';
     OutputDemoComponent,
     PersonCardComponent,
     TemplateDrivenFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    CrudDemoComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  name: string = 'Ilias';
-  lastName = 'Jvr';
+  name: string = 'Christodoulos';
+  lastName = 'Fragkoudakis';
 
   person: Person = {
-    givenName: 'Ilias',
-    surName: 'Jvr',
-    age: 0x24,
-    email: 'tzavilias@gmail.com',
+    givenName: 'Christodoulos',
+    surName: 'Fragkoudakis',
+    age: 0x37,
+    email: 'chfrag@aueb.gr',
     address: 'Athens, Greece',
   };
 
@@ -57,7 +59,7 @@ export class AppComponent implements OnInit {
     this.appService.getAllUsers().subscribe((users) => {
       this.users = users;
       console.log(this.users);
-    })
+    });
   }
 
   onDeleteUser(i: number) {
@@ -69,7 +71,7 @@ export class AppComponent implements OnInit {
     this.sentUser = user;
   }
 
-  onNewPerson(person: Person){
+  onNewPerson(person: Person) {
     this.users.push(person);
   }
 }
