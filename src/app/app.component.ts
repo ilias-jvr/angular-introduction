@@ -30,14 +30,14 @@ import { CrudDemoComponent } from './crud-demo/crud-demo/crud-demo.component';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  name: string = 'Ilias';
-  lastName = 'Jvr';
+  name: string = 'Christodoulos';
+  lastName = 'Fragkoudakis';
 
   person: Person = {
-    givenName: 'Ilias',
-    surName: 'Jvr',
-    age: 0x24,
-    email: 'tzavilias@gmail.com',
+    givenName: 'Christodoulos',
+    surName: 'Fragkoudakis',
+    age: 0x37,
+    email: 'chfrag@aueb.gr',
     address: 'Athens, Greece',
   };
 

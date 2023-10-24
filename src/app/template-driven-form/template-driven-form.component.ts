@@ -8,14 +8,13 @@ import { Person } from '../interfaces/person';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './template-driven-form.component.html',
-  styleUrls: ['./template-driven-form.component.css']
+  styleUrls: ['./template-driven-form.component.css'],
 })
 export class TemplateDrivenFormComponent {
   @Output() person = new EventEmitter<Person>();
 
   onSubmit(form: any) {
-    // console.log(form.value as Person);
     this.person.emit(form.value as Person);
-    form.reset;
+    form.reset();
   }
 }

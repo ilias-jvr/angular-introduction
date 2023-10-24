@@ -1,8 +1,53 @@
 # Εισαγωγή στo Angular Framework
 
+## 14. CRUD users: Delete 
+
+- Σχεδόν ίδια περίπτωση με το branch 12-Users-CRUD-Read-Users
+- Χρησιμοποιούμε την ίδια υπο-φόρμα που ζητά το user id και στη συνέχεια αντί να αναζητήσει με σκοπό τη μεταφορά των δεδομένων στο template καλεί τη διαδικασία της διαγραφής από το AppService.
+
+## 13. CRUD users: Create User
+
+- Άμεση χρήση του παραδείγματος της Reactive Form από το branch 08-Reactive-Forms
+
+## 12. CRUD users: Read User
+
+- Πρόσβαση σε template variable μέσω του `@ViewChild`:
+  ```typescript
+  @ViewChild('userId') userIdInput!: ElementRef<HTMLInputElement>;
+  ...
+  const id = this.userIdInput.nativeElement.value;
+  ```
+- Πέρασμα αντικειμένου με χαρακτηριστικά `next`, `error` και `complete` και τιμές τα αντίστοιχα callbacks σαν όρισμα στο subscribe στην κλήση του `HttpClient` που γίνεται διαμέσου του `AppService`:
+  ```typescript
+  ... this.service.action(parameters).subscribe({
+    next: (data) => {
+      // do something with data
+    },
+    error: (error) => {
+      // handle the error
+    },
+    complete: () => {
+      // The operation completed
+    });
+  ```
+
+## 11. CRUD users: List Users
+
+- Δημιουργία component που εμφανίζει όλους τους χρήστες "της βάσης του json-server"
+- Χρησιμοποιεί το `AppService` στο `ngOnInit` για να λάβει δεδομένα από "τη βάση" και να τα θέσει σαν τιμή του χαρακτηριστικού `users`.
+
 ## 10. CRUD users scaffolding
 
--
+- Δημιουργία υποεφαρμογής "CRUD χρηστών" στον κατάλογο `crud-demo`:
+  ```
+  ng g c crud-demo/crud-demo
+  ng g c crud-demo/create-user
+  ng g c crud-demo/read-user
+  ng g c crud-demo/update-user
+  ng g c crud-demo/delete-user
+  ng g c crud-demo/list-users
+  ```
+- Χρήση του `<ng-container>`, `[ngSwitch]`, `*ngSwitchCase` και συνδυασμός τους με τον click handler ενός dropdown για την πλοήγηση ανάμεσα στα component παιδιά.
 
 ## 9. Http Client
 
@@ -29,11 +74,24 @@
 
 ## 8. Reactive forms
 
--
+Η φόρμα ορίζεται στο component και συνδέεται με τα input του template. Ένας click handler μεταφέρει τα δεδομένα στο component και στη συνέχεια ένα EventEmitter μεταφέρει τα δεδομένα στο component γονέα.
+
+- Χρήση του `ReactiveFormsModule` στον πίνακα imports του component (εμπλουτίζει τα templates με επιπλέον HTML markup ώστε να μπορούν να συσχετιστούν με τα χαρακτηριστικά του component).
+- Χρήση των κλάσεων `FormGroup` και `FormControl` για τη δόμηση του αντικειμένου που παράγεται από τη φόρμα. Χρήση των `Validators`.
+- Δέσμευση του χαρακτηριστικού `form` του component με χρήση του `<form [formGroup]="form">...</form>`.
+- Σύνδεση του input με το `FormControl` με χρήση του `formControlName`.
+- Άμεση πρόσβαση στο πεδίο της φόρμας με το `form.get('όνομα πεδίου')`
+- Κατά το Submit το χαρακτηριστικό `form` έχει ήδη τιμή στο component.
 
 ## 7. Template driven forms
 
--
+Η φόρμα ορίζεται στο template και μεταφέρει δεδομένα στο component κατά την υποβολή της. Συνήθως τότε, ένα EventEmitter μεταφέρει τα δεδομένα στο component γονέα.
+
+- Χρήση του `FormsModule` στον πίνακα imports του component (εμπλουτίζει τα templates με επιπλέον HTML markup ώστε να δημιουργούνται objects από τις φόρμες).
+- `<form #form="ngForm">...</form>` ορίζει πως η HTML φόρμα δημιουργεί ένα αντικείμενο που είναι διαχειρίσιμο στα πλαίσια του template με τη μεταβλητή (template variable) `form`.
+- Το αντικείμενο `form` περνά σαν όρισμα στο `onSubmit(form)` όταν συμβεί το event `onSubmit` (ελέγχεται από το κουμπί Submit που μπορεί να πατηθεί μόνο όταν η φόρμα είναι ορθά συμπληρωμένη (valid)).
+- Δίνουμε στο name του input το όνομα του χαρακτηριστικού του αντικειμένου που παράγει η φόρμα και σχετίζεται (το χαρακτηριστικό) με το συγκεκριμένο input. Το συγκεμριμένο χαρακτηριστικό συμμετέχει στο αντικείμενο μόνο αν συμπεριλάβουμε την οδηγία `ngModel`.
+- Με το `#givenName="ngModel"` δηλώνουμε τη μεταβλητή template με όνομα `givenName` που είναι αντικείμενο που μπορεί να εξεταστεί για την ορθότητά του με το `givenName.invalid` και να χρησιμοποιηθεί για την υπο συνθήκη εμφάνιση επεξηγηματικού κειμένου για το ενδεχόμενο λάθος ορθότητας.
 
 ## 6. Component Output
 

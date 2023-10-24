@@ -6,11 +6,11 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './event-bind.component.html',
-  styleUrls: ['./event-bind.component.css']
+  styleUrls: ['./event-bind.component.css'],
 })
 export class EventBindComponent {
   times: number = 0;
-  userInput: string = 'Type something inside the box ->';
+  userInput: string = 'Type Something';
 
   increaseCounter() {
     this.times += 1;
@@ -24,5 +24,4 @@ export class EventBindComponent {
     const target = event.target as HTMLInputElement;
     this.userInput = target.value;
   }
-
 }

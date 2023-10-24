@@ -7,7 +7,7 @@ import { Person } from '../interfaces/person';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './output-demo.component.html',
-  styleUrls: ['./output-demo.component.css']
+  styleUrls: ['./output-demo.component.css'],
 })
 export class OutputDemoComponent {
   @Input() userData: Person[] = [];
